@@ -20,10 +20,10 @@ spec:
       - name: data
       {{- if .Values.hostedMongo.persistence.enabled }}
         persistentVolumeClaim:
-          claimName: {{ .Values.hostedMongo.persistence.existingClaim | default (template "databases.fullname" .)-mongo }}
+          claimName: {{ .Values.hostedMongo.persistence.existingClaim }}
       {{- else }}
         emptyDir: {}
-      {{- end -}}
+      {{- end }}
       containers:
       - name: {{ .Chart.Name }}-mongo
         image: "mongo:3.4"

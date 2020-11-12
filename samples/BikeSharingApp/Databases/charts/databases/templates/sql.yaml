@@ -20,10 +20,10 @@ spec:
       - name: data
       {{- if .Values.hostedSql.persistence.enabled }}
         persistentVolumeClaim:
-          claimName: {{ .Values.hostedSql.persistence.existingClaim | default (template "databases.fullname" .)-sql }}
+          claimName: {{ .Values.hostedSql.persistence.existingClaim }}
       {{- else }}
         emptyDir: {}
-      {{- end -}}
+      {{- end }}
       containers:
       - name: {{ .Chart.Name }}-sql
         image: "mcr.microsoft.com/mssql/server:2017-latest"

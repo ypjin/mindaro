@@ -1,4 +1,4 @@
-{{ if .Values.hostedMongo.enabled }}
+{{ if .Values.hostedMongo.persistence.enabled }}
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:

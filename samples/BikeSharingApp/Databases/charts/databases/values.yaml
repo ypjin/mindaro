@@ -5,5 +5,11 @@ fullnameOverride: databases
 hostedSql:
   enabled: true
   password: "!DummyPassword123!"
+  persistence:
+    enabled: false
+    existingClaim: xxx
 hostedMongo:
   enabled: true
+  persistence:
+    enabled: false
+    existingClaim: xxx

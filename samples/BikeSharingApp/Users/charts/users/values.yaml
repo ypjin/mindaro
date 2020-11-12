@@ -23,8 +23,8 @@ probes:
 
 ingress:
   enabled: false
-  annotations:
-    kubernetes.io/ingress.class: traefik
+  # annotations:
+  #   kubernetes.io/ingress.class: traefik
   path: /
   # hosts:
   #   - chart-example.local

@@ -18,8 +18,12 @@ spec:
     spec:
       volumes:
       - name: data
+      {{- if .Values.hostedMongo.persistence.enabled }}
         persistentVolumeClaim:
-          claimName: {{ template "databases.fullname" . }}-mongo
+          claimName: {{ .Values.hostedMongo.persistence.existingClaim | default (template "databases.fullname" .)-mongo }}
+      {{- else }}
+        emptyDir: {}
+      {{- end -}}
       containers:
       - name: {{ .Chart.Name }}-mongo
         image: "mongo:3.4"

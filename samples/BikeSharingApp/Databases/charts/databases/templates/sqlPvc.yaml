@@ -1,4 +1,4 @@
-{{ if .Values.hostedSql.enabled }}
+{{ if .Values.hostedSql.persistence.enabled }}
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:

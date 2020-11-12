@@ -3,14 +3,14 @@
 
 bikesharingweb:
   ingress:
-    annotations:
-      kubernetes.io/ingress.class: traefik 
+    # annotations:
+    #   kubernetes.io/ingress.class: traefik 
     hosts:
       - dev.bikesharingweb.<REPLACE_ME_WITH_HOST_SUFFIX>  # Assumes deployment to the 'dev' namespace
 
 gateway:
   ingress:
-    annotations:
-      kubernetes.io/ingress.class: traefik 
+    # annotations:
+    #   kubernetes.io/ingress.class: traefik 
     hosts:
       - dev.gateway.<REPLACE_ME_WITH_HOST_SUFFIX>  # Assumes deployment to the 'dev' namespace

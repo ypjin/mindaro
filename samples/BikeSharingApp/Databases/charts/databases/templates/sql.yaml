@@ -5,6 +5,10 @@ metadata:
   name: {{ template "databases.fullname" . }}-sql
   labels:
     chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
+{{- with .Values.hostedSql.deployment.annotations }}
+  annotations:
+{{ toYaml . | indent 4 }}
+{{- end }}
 spec:
   replicas: 1
   serviceName: databases-sql

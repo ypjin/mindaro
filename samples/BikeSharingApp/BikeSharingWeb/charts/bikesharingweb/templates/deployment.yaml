@@ -8,6 +8,10 @@ metadata:
     draft: {{ .Values.draft | default "draft-app" }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
+{{- with .Values.deployment.annotations }}
+  annotations:
+{{ toYaml . | indent 4 }}
+{{- end }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:

@@ -2,6 +2,9 @@
 # Declare variables to be passed into your templates.
 
 bikesharingweb:
+  deployment:
+    annotations:
+      ars.axway.com/server-size: Medium
   ingress:
     # annotations:
     #   kubernetes.io/ingress.class: traefik 
@@ -14,3 +17,9 @@ gateway:
     #   kubernetes.io/ingress.class: traefik 
     hosts:
       - gateway-454465dd5ded8edb20a4686664ccce99.spectest.jin.apirs.net  # Assumes deployment to the 'dev' namespace
+
+databases:
+  hostedSql:
+    deployment:
+      annotations:
+        ars.axway.com/server-size: Large

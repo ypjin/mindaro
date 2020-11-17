@@ -16,7 +16,8 @@ app.prepare()
 
         server.get('/api/host', (req, res) => {
             var apiHost = url.format({
-                protocol: req.protocol,
+                // protocol: req.protocol,
+                protocol: 'https',
                 hostname: getApiUrl(req.get('host'))
             });
 
@@ -72,5 +73,6 @@ function getApiUrl(host) {
         return prefix + hostArr[root] + "." + apiName + "." + baseHost;
     }
     // The below will construct the URL for Connect with routing scenarios where there is no .s. convention
-    return host.replace("bikesharingweb", apiName);
+    // return host.replace("bikesharingweb", apiName);
+    return host.replace("web", apiName);
 }

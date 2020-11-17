@@ -2,6 +2,9 @@
 # Declare variables to be passed into your templates.
 
 bikesharingweb:
+  image:
+    repository: ypjin/bikesharing-bikesharingweb
+    tag: build.20201117.1
   deployment:
     annotations:
       ars.axway.com/server-size: Medium
